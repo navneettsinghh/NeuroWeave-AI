@@ -17,7 +17,7 @@ async def create_plan(goal_id: str) -> PlanResponse:
     if not goal:
         raise HTTPException(status_code=404, detail="Goal not found")
     plan = planner.build_plan(goal)
-    PLAN_STORE[str(plan.id)] = plan
+    PLAN_STORE.set(str(plan.id), plan)
     task_responses = [
         PlanTaskResponse(
             id=str(task.id),

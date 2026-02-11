@@ -65,6 +65,7 @@ neuroweave/
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+export NEUROWEAVE_DB_PATH=.data/neuroweave.db
 uvicorn neuroweave.api.main:app --reload
 ```
 
@@ -78,13 +79,13 @@ uvicorn neuroweave.api.main:app --reload
 ## Tech Stack
 - **Backend**: Python, FastAPI, Pydantic
 - **Workflow Engine**: Temporal-compatible orchestration abstractions
-- **Data**: PostgreSQL, Redis, vector store (scaffolded)
+- **Data**: SQLite persistence (implemented), PostgreSQL/Redis (next)
 - **AI Layer**: Modular LLM routing + tool calling (scaffolded)
 - **Deployment**: Docker + Kubernetes templates
 - **Security**: OAuth, RBAC, secrets manager, audit logs
 
 ## Next Steps
-- Implement persistence (PostgreSQL + Redis queue).
+- Upgrade SQLite persistence to PostgreSQL + Redis queue.
 - Add Temporal workflows for distributed execution.
 - Expand agent toolkits and integrations.
 - Build observability (OpenTelemetry traces + metrics).

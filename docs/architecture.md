@@ -68,3 +68,8 @@ flowchart TD
 - Resilient retries + escalation.
 - Secure secrets handling + RBAC.
 - Deterministic audit trail.
+
+## Current Persistence Implementation
+- Goal and plan records are persisted via a SQLite-backed model store (`SQLiteModelStore`).
+- API routes use persistent stores instead of process-local dictionaries.
+- Database path is configurable via `NEUROWEAVE_DB_PATH`.

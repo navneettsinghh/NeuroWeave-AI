@@ -21,7 +21,7 @@ async def create_goal(payload: GoalRequest) -> GoalResponse:
         risk_tolerance=payload.risk_tolerance,
         budget=payload.budget,
     )
-    GOAL_STORE[str(goal.id)] = goal
+    GOAL_STORE.set(str(goal.id), goal)
     missing_fields = []
     if not payload.success_metrics:
         missing_fields.append("success_metrics")
