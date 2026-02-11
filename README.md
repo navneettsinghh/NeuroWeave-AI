@@ -74,7 +74,9 @@ uvicorn neuroweave.api.main:app --reload
 - `POST /simulate/{goal_id}` — run decision intelligence simulation
 - `POST /plans/{goal_id}` — generate a task DAG
 - `POST /execute/{plan_id}` — orchestrate execution
+- `GET /execute/{execution_id}` — fetch execution state
 - `POST /verify/{plan_id}` — verify outcomes
+- `GET /audits/{audit_id}` — fetch deterministic audit evidence
 
 ## Tech Stack
 - **Backend**: Python, FastAPI, Pydantic
