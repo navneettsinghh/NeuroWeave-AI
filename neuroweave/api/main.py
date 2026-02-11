@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from fastapi import FastAPI
 
-from neuroweave.api.routes import audits, execution, goals, plans, simulation, verification
+from neuroweave.api.routes import audits, execution, goals, outcomes, plans, simulation, verification
 
 app = FastAPI(title="NeuroWeave AI")
 
@@ -11,4 +11,5 @@ app.include_router(plans.router)
 app.include_router(simulation.router)
 app.include_router(execution.router)
 app.include_router(verification.router)
+app.include_router(outcomes.router)
 app.include_router(audits.router)

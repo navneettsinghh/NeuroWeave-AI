@@ -75,7 +75,8 @@ uvicorn neuroweave.api.main:app --reload
 - `POST /plans/{goal_id}` — generate a task DAG
 - `POST /execute/{plan_id}` — orchestrate execution
 - `GET /execute/{execution_id}` — fetch execution state
-- `POST /verify/{plan_id}` — verify outcomes
+- `POST /verify/{plan_id}` — verify outcomes and persist an outcome record
+- `GET /outcomes/{outcome_id}` — retrieve verified outcome artifacts
 - `GET /audits/{audit_id}` — fetch deterministic audit evidence
 
 ## Tech Stack
