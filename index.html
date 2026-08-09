@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CONVERTIQ — AI Real Estate Lead Follow-Up Demo</title>
+  <meta name="description" content="CONVERTIQ helps real-estate teams respond instantly, qualify buyers, prioritize hot opportunities, and know who to contact next." />
+  <link rel="stylesheet" href="src/styles.css" />
+</head>
+<body>
+  <main>
+    <section class="hero" id="top">
+      <nav aria-label="Primary navigation">
+        <strong>CONVERTIQ</strong>
+        <span id="environment-indicator">DEMO MODE · Example Realty</span>
+      </nav>
+      <div class="heroGrid">
+        <div>
+          <p class="eyebrow mutedEyebrow">Automation → AI Application → Productized Service</p>
+          <h1>Turn every property enquiry into an opportunity.</h1>
+          <p class="subcopy">CONVERTIQ helps real-estate teams respond instantly, qualify buyers, identify high-intent opportunities, and know exactly who to contact next.</p>
+          <div class="actions">
+            <a class="button primary" id="experience-demo" href="#demo">Experience Live Demo</a>
+            <a class="button secondary" href="#workflow">See How It Works</a>
+          </div>
+        </div>
+        <aside class="heroProof" aria-label="Demo promise">
+          <span class="statusDot">Live demo mode</span>
+          <h2>In 90 seconds, show how a new enquiry becomes a booked appointment.</h2>
+          <p>No database, no production WhatsApp credentials, no fake claims — just the buyer workflow a real-estate team can validate.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="problem" id="workflow">
+      <div>
+        <p class="eyebrow">Business problem</p>
+        <h2>Your leads are already paying for your attention.</h2>
+        <p>When responses are slow or follow-up is inconsistent, paid enquiries can turn into silent pipeline leakage.</p>
+      </div>
+      <ul class="problemList" aria-label="Common real-estate lead follow-up problems">
+        <li>Slow responses</li>
+        <li>Missed WhatsApp enquiries</li>
+        <li>Inconsistent follow-up</li>
+        <li>Unqualified leads consuming agent time</li>
+        <li>Hot buyers getting lost</li>
+        <li>No clear priority for sales teams</li>
+      </ul>
+      <div class="workflow card" aria-label="CONVERTIQ workflow"><strong>Lead arrives</strong><span>↓</span><strong>Instant response</strong><span>↓</span><strong>AI qualification</strong><span>↓</span><strong>Lead priority</strong><span>↓</span><strong>Agent notification</strong><span>↓</span><strong>Human follow-up</strong><span>↓</span><strong>Appointment</strong></div>
+    </section>
+
+    <section class="comparison" aria-label="Before and after CONVERTIQ">
+      <article class="compareCard before"><p class="eyebrow">Before</p><h2>Manual follow-up leaks attention.</h2><ol><li>New lead</li><li>Agent notices later</li><li>Manual WhatsApp reply</li><li>Forgotten follow-up</li><li>Lead goes cold</li></ol></article>
+      <article class="compareCard after"><p class="eyebrow">With CONVERTIQ</p><h2>Every enquiry gets a next step.</h2><ol><li>New lead</li><li>Instant response</li><li>AI qualification</li><li>HOT/WARM/COLD priority</li><li>Agent alert</li><li>Follow-up</li></ol></article>
+    </section>
+
+    <section class="trustGrid" aria-label="Trust statements">
+      <article class="card"><h3>Built for sales teams</h3><p>Human takeover is always available so agents handle important conversations while AI handles repetitive first response.</p></article>
+      <article class="card"><h3>Designed for real-world workflows</h3><p>The demo follows the commercial path your team already cares about: lead → qualification → follow-up → appointment.</p></article>
+      <article class="card"><h3>Deployment-ready architecture</h3><p>Provider integrations can be connected during a paid pilot without changing the core qualification workflow.</p></article>
+    </section>
+
+    <section class="demoHeader" id="demo">
+      <div><p class="eyebrow">Sales demo mode</p><h2>Live Demo Experience</h2><p>Show the complete story: detected lead, instant response, qualification, priority, agent action, takeover, and appointment.</p></div>
+      <div class="actions"><button class="primary" id="demo-mode" type="button">Demo Mode</button><button id="load-demo" type="button">Load Demo Lead</button><button class="ghost" id="reset-demo" type="button">Reset Demo</button></div>
+    </section>
+
+    <section class="progress" id="demo-progress" aria-label="Demo progress"></section>
+    <section class="storyPanel" id="story-panel" aria-live="polite"></section>
+
+    <section class="appGrid">
+      <form class="panel" id="lead-form">
+        <h2>Create a new enquiry</h2>
+        <label for="name">Full name<input id="name" required placeholder="Rahul Sharma" autocomplete="name" /></label>
+        <label for="phone">Phone number<input id="phone" required placeholder="+91 98765 43210" autocomplete="tel" /></label>
+        <label for="propertyType">Property type<select id="propertyType"><option>3 BHK Apartment</option><option>Apartment</option><option>Villa</option><option>Plot</option><option>Commercial</option><option>Other</option></select></label>
+        <label for="location">Preferred location<input id="location" required placeholder="City Center" /></label>
+        <label for="budget">Budget<select id="budget"><option>₹40L–₹60L</option><option>₹60L–₹80L</option><option selected>₹80 Lakh</option><option>₹80L–₹1Cr</option><option>₹1Cr–₹1.5Cr</option><option>₹1.5Cr+</option><option>Not sure yet</option></select></label>
+        <label for="timeline">Buying timeline<select id="timeline"><option>Immediately</option><option selected>Within 30 days</option><option>Within 1 month</option><option>1–3 months</option><option>3–6 months</option><option>Just researching</option></select></label>
+        <p class="formError" id="form-error" role="alert"></p>
+        <div class="duplicateNotice" id="duplicate-notice" hidden></div>
+        <button class="primary" type="submit">Send Enquiry</button>
+      </form>
+      <section class="phone" aria-label="WhatsApp simulation"><div class="phoneTop"><div><strong>WhatsApp Follow-Up</strong><small id="active-state">AI Active</small></div><button id="takeover" type="button">Human Takeover</button></div><div class="chat" id="chat"></div><div class="quickReplies"><button type="button" data-reply="Yes, connect me">Yes, connect me</button><button type="button" data-reply="Show properties first">Show properties first</button><button type="button" data-reply="Talk later">Talk later</button></div></section>
+    </section>
+
+    <section class="commandCenter" aria-labelledby="command-title">
+      <div class="sectionHeader"><div><p class="eyebrow">Command center</p><h2 id="command-title">Opportunity Command Center</h2></div><p>Demo data only. These indicators show where the team should focus attention next.</p></div>
+      <section class="metrics" id="metrics" aria-label="Opportunity metrics"></section>
+      <section class="recommendations panel" aria-labelledby="actions-title"><h2 id="actions-title">AI Recommended Actions</h2><div id="recommended-actions"></div></section>
+    </section>
+
+    <section class="pipeline" id="pipeline" aria-label="Sales pipeline"></section>
+    <section class="details panel" id="details"></section>
+
+    <section class="leakDetector" aria-label="Revenue Leak Detector"><p class="eyebrow">Demo insight</p><h2>Revenue Leak Detector</h2><div class="leakGrid"><strong>18 leads received no follow-up.</strong><strong>7 qualified leads were contacted after more than 2 hours.</strong><strong>4 hot leads have been inactive for over 24 hours.</strong></div><h3>AI Recommendation</h3><p>Improve first-response coverage during evening enquiry hours. This demo uses sample operational data, not actual revenue-loss claims.</p></section>
+
+    <section class="nextFlow"><h2>From enquiry to appointment.</h2><div class="workflow card"><strong>Lead</strong><span>↓</span><strong>AI Response</strong><span>↓</span><strong>Qualification</strong><span>↓</span><strong>Priority</strong><span>↓</span><strong>Agent Action</strong><span>↓</span><strong>Appointment</strong></div><a class="button primary pilot-cta" href="#pilot">Request a Pilot</a></section>
+
+    <section class="pilotCta" id="pilot"><div><p class="eyebrow">Paid pilot validation</p><h2>Ready to stop losing property enquiries?</h2><p>We’ll configure CONVERTIQ around your lead sources, qualification process, WhatsApp workflow, and sales team.</p><div class="actions"><a class="button primary pilot-cta" href="#prospect-form">Request a Pilot</a><a class="button secondary pilot-cta" href="mailto:sales@example.com?subject=Book%20CONVERTIQ%20Demo">Book a Demo</a></div></div><form class="prospectForm" id="prospect-form"><h3>Request pilot details</h3><label for="prospect-name">Name<input id="prospect-name" required autocomplete="name" /></label><label for="business-name">Business name<input id="business-name" required /></label><label for="email">Email<input id="email" type="email" required autocomplete="email" /></label><label for="whatsapp">Phone/WhatsApp<input id="whatsapp" required autocomplete="tel" /></label><label for="agents">Number of agents<input id="agents" type="number" min="1" placeholder="5" /></label><label for="monthly-leads">Approximate monthly leads<input id="monthly-leads" type="number" min="0" placeholder="120" /></label><label for="lead-source">Current lead source<input id="lead-source" placeholder="Facebook Ads, website, portals, referrals" /></label><label for="want">What do you want?<select id="want"><option>Demo</option><option>Paid pilot</option><option>WhatsApp automation</option><option>Lead qualification</option><option>Custom setup</option></select></label><p class="formNote">Placeholder submission: opens an email draft to <strong>sales@example.com</strong>. Replace this destination before live outreach.</p><p class="formError" id="prospect-error" role="alert"></p><button class="primary" type="submit">Request a Pilot</button></form></section>
+  </main>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
